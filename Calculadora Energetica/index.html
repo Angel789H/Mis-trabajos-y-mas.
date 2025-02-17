@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Energética</title>
+    <link rel="stylesheet" href="Estyles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora Energética</h1>
+        <button id="toggle-theme">🌙 Modo Oscuro</button>
+        <form id="device-form">
+            <label for="device-name">Nombre del dispositivo (opcional):</label>
+            <input type="text" id="device-name" placeholder="Ej: Lámpara">
+
+            <label for="power">Potencia (W):</label>
+            <input type="number" id="power" required placeholder="Ej: 60">
+
+            <label for="hours">Horas de uso diario:</label>
+            <input type="number" id="hours" required placeholder="Ej: 5">
+
+            <label for="cost">Tarifa de energía (costo por kWh - opcional):</label>
+            <input type="number" id="cost" step="0.01" placeholder="Ej: 0.15">
+
+            <button type="submit">Agregar dispositivo</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Potencia (W)</th>
+                    <th>Horas</th>
+                    <th>Consumo Diario (kWh)</th>
+                    <th>Consumo Mensual (kWh)</th>
+                    <th>Costo Diario</th>
+                    <th>Costo Mensual</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody id="device-list"></tbody>
+        </table>
+
+        <div id="totals">
+            <p><strong>Consumo Total Diario:</strong> <span id="total-daily">0</span> kWh</p>
+            <p><strong>Consumo Total Mensual:</strong> <span id="total-monthly">0</span> kWh</p>
+            <p><strong>Costo Total Diario:</strong> <span id="total-cost-daily">0</span> $</p>
+            <p><strong>Costo Total Mensual:</strong> <span id="total-cost-monthly">0</span> $</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
